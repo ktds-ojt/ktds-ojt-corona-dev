@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DashboardPageSqlMap">
+    <select id="SelectCurStateById" resultType="java.util.HashMap">
+        SELECT * FROM "CUR_STATE"
+        INNER JOIN "DISEASE" ON "CUR_STATE"."CUR_STATE_DISEASE_ID" = "DISEASE"."DISEASE_ID"
+        WHERE "CUR_STATE_DISEASE_ID" = #{id}
+        ORDER BY "CUR_STATE_DATE" DESC
+        LIMIT 10
+    </select>
+
+    <select id="SelectCityStateById" resultType="java.util.HashMap">
+        SELECT *
+        FROM "CITY_STATE"
+        INNER JOIN "DISEASE" ON "CITY_STATE"."CITY_STATE_DISEASE_ID" = "DISEASE"."DISEASE_ID"
+        WHERE "CITY_STATE_DISEASE_ID" = #{id}
+        ORDER BY "CITY_STATE_DATE" DESC
+        LIMIT 1
+    </select>
+
+    <select id="SelectDiseaseById" resultType="com.example.model.Disease">
+        SELECT *
+        FROM "DISEASE"
+        WHERE "DISEASE_ID" = #{id}
+    </select>
+</mapper>
