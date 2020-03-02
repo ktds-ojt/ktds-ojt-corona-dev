@@ -6,7 +6,7 @@
     <groupId>com.example</groupId>
     <artifactId>mybatis-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
@@ -139,6 +139,15 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>*Test.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
             <!-- allows mixed groovy and java compilation with the need to have a stub generation phase-->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

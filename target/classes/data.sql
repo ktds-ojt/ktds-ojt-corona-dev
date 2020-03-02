@@ -1,5 +1,0 @@
-INSERT INTO PUBLISHERS (  NAME, PHONE   )
-values( 'Manning' ,'(425) 555-1212');
-
-INSERT INTO PUBLISHERS (  NAME, PHONE   )
-values( 'Apress' ,'(206) 555-1234');
