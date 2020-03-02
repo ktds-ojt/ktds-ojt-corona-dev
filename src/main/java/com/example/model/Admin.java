@@ -6,7 +6,17 @@ public class Admin {
     private Integer ADMIN_ID;
     private String ADMIN_LOGIN_ID;
     private String ADMIN_LOGIN_PW;
-    private Integer ADMIN_TYPE;
+    private String ADMIN_TOKEN;
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "ADMIN_ID=" + ADMIN_ID +
+                ", ADMIN_LOGIN_ID='" + ADMIN_LOGIN_ID + '\'' +
+                ", ADMIN_LOGIN_PW='" + ADMIN_LOGIN_PW + '\'' +
+                ", ADMIN_TOKEN='" + ADMIN_TOKEN + '\'' +
+                '}';
+    }
 
     public Integer getADMIN_ID() {
         return ADMIN_ID;
@@ -32,21 +42,11 @@ public class Admin {
         this.ADMIN_LOGIN_PW = ADMIN_LOGIN_PW;
     }
 
-    public Integer getADMIN_TYPE() {
-        return ADMIN_TYPE;
+    public String getADMIN_TOKEN() {
+        return ADMIN_TOKEN;
     }
 
-    public void setADMIN_TYPE(Integer ADMIN_TYPE) {
-        this.ADMIN_TYPE = ADMIN_TYPE;
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "ADMIN_ID=" + ADMIN_ID +
-                ", ADMIN_LOGIN_ID='" + ADMIN_LOGIN_ID + '\'' +
-                ", ADMIN_LOGIN_PW='" + ADMIN_LOGIN_PW + '\'' +
-                ", ADMIN_TYPE=" + ADMIN_TYPE +
-                '}';
+    public void setADMIN_TOKEN(String ADMIN_TOKEN) {
+        this.ADMIN_TOKEN = ADMIN_TOKEN;
     }
 };
