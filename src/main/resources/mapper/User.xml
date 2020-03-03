@@ -3,22 +3,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="UserSqlMap">
-<!--  1  -->
-    <insert id="InsertUser">
-        INSERT INTO "USERS" VALUES(DEFAULT, #{user_Name}, #{user_age}, #{user_gender});
-    </insert>
-<!--  2  -->
-    <update id="UpdateUser">
-        UPDATE "USERS"
-        SET "USER_NAME"=#{user_Name}, "USER_AGE"=#{user_age}, "USER_GENDER"=#{user_gender}
-        WHERE "USER_ID"=#{user_Id}
-    </update>
-<!--  3  -->
-    <delete id="DeleteUser">
-        DELETE FROM "USERS" WHERE "USER_ID"=#{user_Id}
-    </delete>
-<!--  4  -->
-    <select id="SelectUser" resultType="java.util.HashMap">
-        SELECT * FROM "USERS"
+    <select id="SelectTESTDB1" resultType="java.util.HashMap">
+        SELECT "TEST_DB_TIME",
+        "TEST_DB_USE",
+        "TEST_DB_COST",
+        "TEST_DB_USE" * "TEST_DB_COST" AS "TEST_DB_PRICE"
+        FROM "TEST_DB_1"
     </select>
 </mapper>
