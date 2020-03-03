@@ -13,7 +13,7 @@ public class SigninPageServiceImpl implements SigninPageService {
     @Inject
     private SigninPageDao signinPageDao;
 
-    public List<Admin> SelectAdmin() {
-        return signinPageDao.SelectAdmin();
+    public List<Admin> SelectAdmin(Admin admin) throws Exception {
+        return signinPageDao.SelectAdmin(admin);
     }
 }

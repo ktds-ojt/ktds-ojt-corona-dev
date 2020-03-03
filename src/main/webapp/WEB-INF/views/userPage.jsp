@@ -23,6 +23,7 @@
 </html>
 <script>
 Vue.use(HighchartsVue.default)
+
 Vue.component('v-select', VueSelect.VueSelect);
  
 var app = new Vue({

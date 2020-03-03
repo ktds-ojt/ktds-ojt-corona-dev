@@ -40,40 +40,38 @@
 </body>
 
 <script>
-var app = new Vue({
-        el: '#app',
-        data:{
-            username: '',
-            password: '',
-        },
-        methods: {
-            login(){
-                //coronaadmin = Y29yb25hYWRtaW4=
-                const EncodingUsername = btoa(this.username);
-                //coronapassword = Y29yb25hcGFzc3dvcmQ=
-                const EncodingPassword = btoa(this.password);
-                
-                axios.get('http://localhost:8080/api/login').then((response) => {
-                  const idCheck = response["data"][0]["ADMIN_LOGIN_ID"] == EncodingUsername;
-                  const pwCheck = response["data"][0]["ADMIN_LOGIN_PW"] == EncodingPassword;
 
-                  if (idCheck && pwCheck){
-                    window.location.replace("/admin")
-                    return true;
-                  }
-                  else {
-                    alert("Check Your Id or PassWord")
-                    return false;
-                  }
-                })
-              }
-            }
-        })
-    // SIGNIN_GET_API_LOGIN : function() {
-    //   console.log("Button Click")
-    //   axios.get('http://localhost:8080/api/login').then((result) => {
-    //     console.log(result)
-    //     alert("message")
-    //   })
-    // },
+var app = new Vue({
+  el: "#app",
+  data:{
+    username: '',
+    password: '',
+  },
+  methods: {
+    login() {
+      console.log(this.username, this.password)
+
+      axios({
+        method : 'post',
+        url : 'http://localhost:8080/api/admin/login',
+        // contentType: 'application/json',
+        data : {
+          "admin_LOGIN_ID" : this.username,
+          "admin_LOGIN_PW" : this.password,
+        }
+      }).then((response) => {
+        alert('Login 성공')
+        location.replace('/admin?token=' + response.data[0]["ADMIN_TOKEN"])
+      }).catch((err) => {
+        console.log(err)
+        alert("ID 나 Password 를 확인해 주세요.")
+      })
+    }
+  },
+
+  created () {
+  },
+})
+
+
 </script>

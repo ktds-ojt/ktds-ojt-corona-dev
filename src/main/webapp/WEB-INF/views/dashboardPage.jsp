@@ -46,7 +46,7 @@
 
                 <!-- Begin DashBoard -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800"> {{ mainContentTitle }} 상환판</h1>
+                        <h1 class="h3 mb-0 text-gray-800"> {{ mainContentTitle }} 상황판</h1>
                 </div>
 
                 <div class="row">
@@ -185,9 +185,6 @@
         <!-- ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  -->
         <!-- Main Content END -->
     </div>
-    
-
-
 </div>
 </body>
 

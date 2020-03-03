@@ -5,5 +5,12 @@
 <mapper namespace="SignPageSqlMap">
     <select id="SelectAdmin" resultType="java.util.HashMap">
         SELECT * FROM "ADMIN"
+        WHERE "ADMIN_LOGIN_ID"=#{ADMIN_LOGIN_ID} AND "ADMIN_LOGIN_PW"=#{ADMIN_LOGIN_PW};
     </select>
+
+    <update id="UpdateAdmin">
+        UPDATE "ADMIN"
+        SET "ADMIN_TOKEN"=#{ADMIN_TOKEN}
+        WHERE "ADMIN_LOGIN_ID"=#{ADMIN_LOGIN_ID} AND "ADMIN_LOGIN_PW"=#{ADMIN_LOGIN_PW};
+    </update>
 </mapper>

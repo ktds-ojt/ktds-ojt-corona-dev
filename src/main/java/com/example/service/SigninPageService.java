@@ -5,5 +5,5 @@ import com.example.model.Admin;
 import java.util.List;
 
 public interface SigninPageService {
-    public List<Admin> SelectAdmin();
+    public List<Admin> SelectAdmin(Admin admin) throws Exception;
 }
