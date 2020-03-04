@@ -53,7 +53,7 @@ var app = new Vue({
 
       axios({
         method : 'post',
-        url : 'http://localhost:8080/api/admin/login',
+        url : '/api/admin/login',
         // contentType: 'application/json',
         data : {
           "admin_LOGIN_ID" : this.username,

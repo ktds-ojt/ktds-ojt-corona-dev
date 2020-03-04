@@ -207,8 +207,8 @@ var app = new Vue({
         async FetchMultipleURL(){
             const array = (window.location.pathname).split('/')
 
-            const DASHBOARD_GET_API_DASHBOARD_CURSTATE_ID = "http://localhost:8080/api/dashboard/curstate/" + array[array.length-1];
-            const DASHBOARD_GET_API_DASHBOARD_DISEASE_ID = "http://localhost:8080/api/dashboard/disease/" + array[array.length-1];
+            const DASHBOARD_GET_API_DASHBOARD_CURSTATE_ID = "/api/dashboard/curstate/" + array[array.length-1];
+            const DASHBOARD_GET_API_DASHBOARD_DISEASE_ID = "/api/dashboard/disease/" + array[array.length-1];
 
             const reqCurState = axios.get(DASHBOARD_GET_API_DASHBOARD_CURSTATE_ID);
             const reqDisease = axios.get(DASHBOARD_GET_API_DASHBOARD_DISEASE_ID);

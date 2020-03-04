@@ -42,7 +42,7 @@ var app = new Vue({
   },
   created: function () {
     console.log("Start MainPage.jsp")
-    axios.get('http://localhost:8080/api/main').then((response) => {
+    axios.get('/api/main').then((response) => {
       console.log(response)
       this.DISEASE = response.data.map(res => res)
       return 200;

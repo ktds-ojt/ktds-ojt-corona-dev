@@ -41,7 +41,7 @@ var app = new Vue({
     methods : {
         Initialize () {
             console.log("Start Chart")
-            axios.get("http://localhost:8080/api/user/testdb1").then((response) => {
+            axios.get("/api/user/testdb1").then((response) => {
                 console.log(response)
 
                 this.labels = response.data.map(r => r["TEST_DB_TIME"])

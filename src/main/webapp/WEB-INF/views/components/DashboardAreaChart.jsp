@@ -14,7 +14,7 @@ Vue.component('line-chart', {
   methods :{
     async init() {
       const array = (window.location.pathname).split('/')
-      const DASHBOARD_GET_API_DASHBOARD_CITYSTATE_ID = "http://localhost:8080/api/dashboard/curstate/" + array[array.length-1];
+      const DASHBOARD_GET_API_DASHBOARD_CITYSTATE_ID = "/api/dashboard/curstate/" + array[array.length-1];
 
       await axios.get(DASHBOARD_GET_API_DASHBOARD_CITYSTATE_ID).then((response) => {
 
