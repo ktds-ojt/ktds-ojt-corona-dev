@@ -7,11 +7,11 @@
         <!-- SideBar Start -->
         <!-- ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/main">
-            <div class="sidebar-brand-icon rotate-n-15">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+              <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">KT DS</div>
+              </div>
+              <div class="sidebar-brand-text mx-3">KT DS</div>
             </a>
         
             <!-- Divider -->
@@ -19,13 +19,25 @@
         
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+              <a class="nav-link" v-bind:href="'/dashboard/' + url">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" v-bind:href="'/worlddashboard/' + url">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>World Dashboard</span></a>
             </li>
         
             <!-- Divider -->
             <hr class="sidebar-divider">
+        
+            
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center d-none d-md-inline">
+              <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
         </ul>
         <!-- ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  -->
         <!-- SideBar END -->
@@ -195,9 +207,14 @@ var app = new Vue({
     data : {
         mainContentTitle : '',
         CardContent : [],
+        url : ''
     },
     created() {
-
+        const curURLArray = (window.location.pathname).split('/')
+        console.log(curURLArray)
+        this.url = curURLArray[curURLArray.length-1];
+        console.log("=========-=-=-=-=-=-=-=")
+        console.log(this.url)
         this.FetchMultipleURL();
     },
     mounted() {
@@ -209,6 +226,7 @@ var app = new Vue({
 
             const DASHBOARD_GET_API_DASHBOARD_CURSTATE_ID = "/api/dashboard/curstate/" + array[array.length-1];
             const DASHBOARD_GET_API_DASHBOARD_DISEASE_ID = "/api/dashboard/disease/" + array[array.length-1];
+            
 
             const reqCurState = axios.get(DASHBOARD_GET_API_DASHBOARD_CURSTATE_ID);
             const reqDisease = axios.get(DASHBOARD_GET_API_DASHBOARD_DISEASE_ID);

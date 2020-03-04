@@ -71,7 +71,7 @@ var app = new Vue({
     const token = document.location.href.split("?")[1].split("=")[1]
     axios({
         method : 'post',
-        url : 'http://localhost:8080/admin/check/token',
+        url : '/admin/check/token',
         // contentType: 'application/json',
         data : {
           "admin_TOKEN" : token,

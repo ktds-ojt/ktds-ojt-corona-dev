@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WorldDashboardPageSqlMap">
+
+    <select id="SelectWorldStateById" resultType="java.util.HashMap">
+        SELECT * FROM "WORLD_CUR_STATE"
+        WHERE ("WORLD_CUR_STATE_DATE"=current_date - 1 OR "WORLD_CUR_STATE_DATE"=current_date - 2) AND "WORLD_CUR_STATE_DISEASE_ID"=#{id}
+        ORDER BY "WORLD_CUR_STATE_DATE" DESC , "WORLD_CUR_STATE_CON_CNT" DESC
+    </select>
+    <select id="SelectWorldStateChartById" resultType="java.util.HashMap">
+        SELECT * FROM "WORLD_CUR_STATE"
+        WHERE "WORLD_CUR_STATE_DATE"=current_date - 1 AND "WORLD_CUR_STATE_DISEASE_ID"=#{id}
+        ORDER BY "WORLD_CUR_STATE_DATE" DESC , "WORLD_CUR_STATE_CON_CNT" DESC
+    </select>
+    <select id="SelectWorldStateTodayById" resultType="java.util.HashMap">
+        SELECT SUM("WORLD_CUR_STATE_CON_CNT") AS "CON_CNT", SUM("WORLD_CUR_STATE_DEAD_CNT") AS "DEAD_CNT"
+        FROM "WORLD_CUR_STATE"
+        WHERE "WORLD_CUR_STATE_DATE"=current_date - 1 AND "WORLD_CUR_STATE_DISEASE_ID"=#{id}
+    </select>
+    <select id="SelectWorldStateYesterdayById" resultType="java.util.HashMap">
+        SELECT SUM("WORLD_CUR_STATE_CON_CNT") AS "CON_CNT", SUM("WORLD_CUR_STATE_DEAD_CNT") AS "DEAD_CNT"
+        FROM "WORLD_CUR_STATE"
+        WHERE "WORLD_CUR_STATE_DATE"=current_date - 2 AND "WORLD_CUR_STATE_DISEASE_ID"=#{id}
+    </select>
+</mapper>

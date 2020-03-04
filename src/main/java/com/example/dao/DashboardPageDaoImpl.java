@@ -26,7 +26,6 @@ public class DashboardPageDaoImpl implements DashboardPageDao {
     }
     public Disease SelectDiseaseById(Integer id) {
         Disease disease = session.selectOne("DashboardPageSqlMap.SelectDiseaseById", id);
-        System.out.println(disease);
         return disease;
     }
 };

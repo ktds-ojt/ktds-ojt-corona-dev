@@ -16,8 +16,6 @@ Vue.component('pie-chart', {
 
         await axios.get(DASHBOARD_GET_API_DASHBOARD_CITYSTATE_ID).then((response) => {
 
-            console.log(response.data)
-
             this.label = response.data[0]["DISEASE_NAME"]
             var array = []
             array.push(response.data[0]["CITY_STATE_SW"])

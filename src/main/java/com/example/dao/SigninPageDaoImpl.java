@@ -23,7 +23,6 @@ public class SigninPageDaoImpl implements SigninPageDao {
         if (AdminList.size() > 0) {
             String base = admin.getADMIN_LOGIN_ID() + admin.getADMIN_LOGIN_PW() + System.currentTimeMillis();
 
-            System.out.println(base);
 
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
@@ -36,7 +35,6 @@ public class SigninPageDaoImpl implements SigninPageDao {
                 hexString.append(hex);
             }
 
-            System.out.println(hexString.toString());
             admin.setADMIN_TOKEN(hexString.toString());
             session.update("SignPageSqlMap.UpdateAdmin", admin);
         }
