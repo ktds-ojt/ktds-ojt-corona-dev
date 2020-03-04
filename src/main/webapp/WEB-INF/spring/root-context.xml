@@ -13,31 +13,31 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
-	<!-- properties -->
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations" value=" classpath:/properties/jdbc.properties" />
-        <property name="fileEncoding" value="UTF-8" />
-    </bean>
+<!--	&lt;!&ndash; properties &ndash;&gt;-->
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--        <property name="locations" value=" classpath:/properties/jdbc.properties" />-->
+<!--        <property name="fileEncoding" value="UTF-8" />-->
+<!--    </bean>-->
 
-    <!-- JDBC-PostgreSQL -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="${jdbc.driverClassName}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
-    </bean>
+<!--    &lt;!&ndash; JDBC-PostgreSQL &ndash;&gt;-->
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="${jdbc.driverClassName}" />-->
+<!--        <property name="url" value="${jdbc.url}" />-->
+<!--        <property name="username" value="${jdbc.username}" />-->
+<!--        <property name="password" value="${jdbc.password}" />-->
+<!--    </bean>-->
 
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    	<property name="mapperLocations" value="classpath:/mapper/**/*.xml"/>
-    	<property name="dataSource" ref="dataSource" />
-     	<property name="configLocation" value="classpath:/config/mybatis-config.xml"/>
-	</bean>
+<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--    	<property name="mapperLocations" value="classpath:/mapper/**/*.xml"/>-->
+<!--    	<property name="dataSource" ref="dataSource" />-->
+<!--     	<property name="configLocation" value="classpath:/config/mybatis-config.xml"/>-->
+<!--	</bean>-->
 
-	<context:component-scan base-package="com.example.service"/>
-	<context:component-scan base-package="com.example.dao"/>
+<!--	<context:component-scan base-package="com.example.service"/>-->
+<!--	<context:component-scan base-package="com.example.dao"/>-->
 
-	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession" destroy-method="clearCache">
-		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
-	</bean>
+<!--	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession" destroy-method="clearCache">-->
+<!--		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
+<!--	</bean>-->
 
 </beans>
