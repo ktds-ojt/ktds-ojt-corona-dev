@@ -25,7 +25,6 @@ public class WorldDashboardPageDaoImp implements WorldDashboardPageDao {
         return session.selectList("WorldDashboardPageSqlMap.SelectWorldStateChartById", id);
     }
     public List<HashMap> SelectWorldStateTodayById(Integer id) {
-        System.out.println(session.selectList("WorldDashboardPageSqlMap.SelectWorldStateTodayById", id));
         return session.selectList("WorldDashboardPageSqlMap.SelectWorldStateTodayById", id);
     }
     public List<HashMap> SelectWorldStateYesterdayById(Integer id){

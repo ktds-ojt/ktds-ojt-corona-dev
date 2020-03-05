@@ -211,10 +211,7 @@ var app = new Vue({
     },
     created() {
         const curURLArray = (window.location.pathname).split('/')
-        console.log(curURLArray)
         this.url = curURLArray[curURLArray.length-1];
-        console.log("=========-=-=-=-=-=-=-=")
-        console.log(this.url)
         this.FetchMultipleURL();
     },
     mounted() {

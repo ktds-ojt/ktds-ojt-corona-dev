@@ -16,7 +16,7 @@
     <body>
         <div id="app">
             <div>
-                    <highcharts :options="chartOptions" ></highcharts>
+                <highcharts :options="chartOptions" ></highcharts>
             </div>
         </div>
     </body>
@@ -40,19 +40,11 @@ var app = new Vue({
     },
     methods : {
         Initialize () {
-            console.log("Start Chart")
             axios.get("/api/user/testdb1").then((response) => {
-                console.log(response)
-
                 this.labels = response.data.map(r => r["TEST_DB_TIME"])
                 this.priceData = response.data.map(r => r["TEST_DB_PRICE"])
                 this.useData = response.data.map(r => r["TEST_DB_USE"])
                 this.costData = response.data.map(r => r["TEST_DB_COST"])
-
-                console.log(this.labels)
-                console.log(this.priceData)
-                console.log(this.useData)
-                console.log(this.costData)
             })
         }
     },
