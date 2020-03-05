@@ -41,4 +41,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/lang/de_DE.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/germanyLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/frozen.js"></script>pt>
+<script src="https://www.amcharts.com/lib/4/themes/moonrisekingdom.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
 </head>

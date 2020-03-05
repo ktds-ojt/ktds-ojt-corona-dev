@@ -100,6 +100,30 @@
                   </div>
               </div>
 
+              
+              
+              <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                  <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                          <h6 class="m-0 font-weight-bold text-primary">실시간 전세계 확진자 사망자 현황</h6>
+                      </div>
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <%@ include file="components/WorldDashboardWorldMap.jsp"%>
+                          <!-- <div class="mt-4 text-center small">
+                              <span class="mr-2">
+                                  <i class="fas fa-circle text-primary"></i> 
+                              </span>
+                          </div>                                         -->
+                      <hr>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
               <div class="row">
                 <div class="col-xl-12 col-lg-12">
                   <div class="card shadow mb-4">
@@ -133,6 +157,7 @@
       </div>
     </div>
 </div>
+
 </body>
 
 <script>

@@ -10,8 +10,10 @@
         ORDER BY "WORLD_CUR_STATE_DATE" DESC , "WORLD_CUR_STATE_CON_CNT" DESC
     </select>
     <select id="SelectWorldStateChartById" resultType="java.util.HashMap">
-        SELECT * FROM "WORLD_CUR_STATE"
-        WHERE "WORLD_CUR_STATE_DATE"=current_date - 1 AND "WORLD_CUR_STATE_DISEASE_ID"=#{id}
+        SELECT "N"."NATION_NAME" AS "WORLD_CUR_STATE_NATION", "W"."WORLD_CUR_STATE_CON_CNT", "W"."WORLD_CUR_STATE_DEAD_CNT"
+        FROM "WORLD_CUR_STATE" AS "W"
+        INNER JOIN "NATION" AS "N" ON "W"."WORLD_CUR_STATE_NATION"="N"."NATION_CODE"
+        WHERE "WORLD_CUR_STATE_DATE"=current_date - 1
         ORDER BY "WORLD_CUR_STATE_DATE" DESC , "WORLD_CUR_STATE_CON_CNT" DESC
     </select>
     <select id="SelectWorldStateTodayById" resultType="java.util.HashMap">
